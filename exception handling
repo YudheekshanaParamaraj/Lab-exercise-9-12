@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+int main() {
+cout<<"YUDHEEKSHANA - LAB EXERCISE 11 - EXCEPTION HANDLING"<<endl;
+try {
+int numerator, denominator;
+cout << "Enter numerator: ";
+cin >> numerator;
+cout << "Enter denominator: ";
+cin >> denominator;
+if (denominator == 0) {
+throw std::runtime_error("Division by zero is not allowed.");
+}
+double result = static_cast<double>(numerator) / denominator;
+cout << "Result: " << result << endl;
+}
+catch (const std::exception& ex) {
+cerr << "Exception caught: " << ex.what() << endl;
+}
+return 0; }
