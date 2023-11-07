@@ -1,0 +1,25 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+int main() {
+cout<<"YUDHEEKSHANA - LAB EXERCISE 12 - I/OSTREAMS"<<endl;
+ofstream outFile("output.txt"); 
+if (!outFile) {
+cerr << "Error opening output file!" << endl;
+return 1;
+}
+outFile << "Hello, File Streams!" << endl;
+outFile << "This is a sample text." << endl;
+outFile.close(); 
+ifstream inFile("output.txt");
+if (!inFile) {
+cerr << "Error opening input file!" << endl;
+return 1;
+}
+std::string line;
+while (getline(inFile, line)) {
+cout << line << endl;
+}
+inFile.close();
+return 0;
+}
